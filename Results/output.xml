@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.7 on win32)" generated="20220727 13:47:46.855" rpa="false" schemaversion="3">
+<suite id="s1" name="Checkout" source="C:\development\robot-scripts\saucedemo_script\tests\Checkout.robot">
+<test id="s1-t1" name="Successfully completing checkout for product" line="18">
+<kw name="Begin Web Test" library="CommonWeb" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>data:,</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220727 13:47:58.032" level="INFO">Opening browser 'chrome' to base url 'data:,'.</msg>
+<status status="PASS" starttime="20220727 13:47:58.032" endtime="20220727 13:48:07.689"/>
+</kw>
+<status status="PASS" starttime="20220727 13:47:58.032" endtime="20220727 13:48:07.697"/>
+</kw>
+<kw name="Given I have to navigate to SauceDemo web site" library="Checkout">
+<kw name="Navigate To" library="LoginPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${SAUCEDEMO_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220727 13:48:07.723" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20220727 13:48:07.723" endtime="20220727 13:48:09.795"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:07.721" endtime="20220727 13:48:09.795"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:07.721" endtime="20220727 13:48:09.795"/>
+</kw>
+<kw name="When I login with the valid username and password" library="Checkout">
+<kw name="Enter Username" library="LoginPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LOGINPAGE_USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:09.803" endtime="20220727 13:48:09.891"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGINPAGE_USERNAME_FIELD}</arg>
+<arg>${USERNAME}[0]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220727 13:48:09.891" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20220727 13:48:09.891" endtime="20220727 13:48:10.413"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:09.803" endtime="20220727 13:48:10.413"/>
+</kw>
+<kw name="Enter Password" library="LoginPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LOGINPAGE_PASSWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:10.413" endtime="20220727 13:48:10.448"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGINPAGE_PASSWORD_FIELD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220727 13:48:10.448" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220727 13:48:10.448" endtime="20220727 13:48:10.855"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:10.413" endtime="20220727 13:48:10.855"/>
+</kw>
+<kw name="Click Login Button" library="LoginPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220727 13:48:10.855" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20220727 13:48:10.855" endtime="20220727 13:48:12.032"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:10.855" endtime="20220727 13:48:12.032"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:09.795" endtime="20220727 13:48:12.032"/>
+</kw>
+<kw name="Then I am successfully logged in SauceDemo" library="Checkout">
+<kw name="Verify Inventory Page" library="InventoryPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PAGE_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:12.064" endtime="20220727 13:48:12.648"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:12.064" endtime="20220727 13:48:12.648"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:12.064" endtime="20220727 13:48:12.648"/>
+</kw>
+<kw name="Given I am logged in SauceDemo" library="Checkout">
+<kw name="Verify Inventory Page" library="InventoryPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PAGE_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:12.795" endtime="20220727 13:48:12.851"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:12.795" endtime="20220727 13:48:12.851"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:12.795" endtime="20220727 13:48:12.851"/>
+</kw>
+<kw name="When I add to cart one Sauce Labs Bike Light pressing Add to Cart button" library="Checkout">
+<kw name="Add item to cart" library="InventoryPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${ADD_BUTTON_SL_BIKE_LIGHT}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220727 13:48:12.859" level="INFO">Clicking button 'xpath= //button[@id='add-to-cart-sauce-labs-bike-light']'.</msg>
+<status status="PASS" starttime="20220727 13:48:12.859" endtime="20220727 13:48:13.078"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:12.859" endtime="20220727 13:48:13.078"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:12.851" endtime="20220727 13:48:13.078"/>
+</kw>
+<kw name="Then I go to check the Cart page" library="Checkout">
+<kw name="Click on Cart Icon" library="InventoryPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CART_ICON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220727 13:48:13.118" level="INFO">Clicking element 'xpath=//*[@id='shopping_cart_container']/a'.</msg>
+<status status="PASS" starttime="20220727 13:48:13.110" endtime="20220727 13:48:13.318"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:13.110" endtime="20220727 13:48:13.318"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:13.110" endtime="20220727 13:48:13.318"/>
+</kw>
+<kw name="Given I am successfully redirected to Cart page" library="Checkout">
+<kw name="Verify Cart Page" library="CartPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${CART_PAGE_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:13.341" endtime="20220727 13:48:13.404"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220727 13:48:14.410" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220727 13:48:13.404" endtime="20220727 13:48:14.410"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:13.341" endtime="20220727 13:48:14.410"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:13.341" endtime="20220727 13:48:14.410"/>
+</kw>
+<kw name="And I check if one Sauce Labs Bike Light is added in the shopping cart" library="Checkout">
+<kw name="Verify Item In Cart" library="CartPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${ITEM_TITLE_IN_CART}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:14.418" endtime="20220727 13:48:14.455"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220727 13:48:15.482" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220727 13:48:14.455" endtime="20220727 13:48:15.482"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:14.410" endtime="20220727 13:48:15.482"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:14.410" endtime="20220727 13:48:15.482"/>
+</kw>
+<kw name="When I press Checkout button" library="Checkout">
+<kw name="Click Checkout Button" library="CartPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CHECKOUT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220727 13:48:15.498" level="INFO">Clicking button 'xpath= //*[@id='checkout']'.</msg>
+<status status="PASS" starttime="20220727 13:48:15.498" endtime="20220727 13:48:15.995"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220727 13:48:17.023" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220727 13:48:16.003" endtime="20220727 13:48:17.023"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:15.498" endtime="20220727 13:48:17.023"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:15.498" endtime="20220727 13:48:17.023"/>
+</kw>
+<kw name="Then I am redirected to Checkout page" library="Checkout">
+<kw name="Verify Checkout Page" library="CheckoutPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${CHECKOUT_PAGE_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:17.159" endtime="20220727 13:48:17.215"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220727 13:48:18.235" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220727 13:48:17.223" endtime="20220727 13:48:18.235"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:17.151" endtime="20220727 13:48:18.235"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:17.127" endtime="20220727 13:48:18.235"/>
+</kw>
+<kw name="Given I am successfully redirected to Checkout page" library="Checkout">
+<kw name="Verify Checkout Page" library="CheckoutPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${CHECKOUT_PAGE_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:18.243" endtime="20220727 13:48:18.291"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220727 13:48:19.338" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220727 13:48:18.299" endtime="20220727 13:48:19.338"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:18.235" endtime="20220727 13:48:19.338"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:18.235" endtime="20220727 13:48:19.338"/>
+</kw>
+<kw name="When I populate all field with the required information" library="Checkout">
+<kw name="Populate First Name" library="CheckoutPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIRST_NAME_FIELD}</arg>
+<arg>${FIRST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220727 13:48:19.394" level="INFO">Typing text 'Pete' into text field 'xpath= //*[@id='first-name']'.</msg>
+<status status="PASS" starttime="20220727 13:48:19.394" endtime="20220727 13:48:19.690"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:19.394" endtime="20220727 13:48:19.698"/>
+</kw>
+<kw name="Populate Last Name" library="CheckoutPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LAST_NAME_FIELD}</arg>
+<arg>${LAST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220727 13:48:19.698" level="INFO">Typing text 'Pen' into text field 'xpath= //*[@id='last-name']'.</msg>
+<status status="PASS" starttime="20220727 13:48:19.698" endtime="20220727 13:48:19.954"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:19.698" endtime="20220727 13:48:19.954"/>
+</kw>
+<kw name="Populate Zip/Postal code" library="CheckoutPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${ZIP_POSTAL_CODE_FIELD}</arg>
+<arg>${ZIP_POSTAL_CODE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220727 13:48:19.954" level="INFO">Typing text 'LV-1026' into text field 'xpath= //*[@id='postal-code']'.</msg>
+<status status="PASS" starttime="20220727 13:48:19.954" endtime="20220727 13:48:20.323"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:19.954" endtime="20220727 13:48:20.323"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:19.386" endtime="20220727 13:48:20.323"/>
+</kw>
+<kw name="And Press Continue button" library="Checkout">
+<kw name="Click on Continue Button" library="CheckoutPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CONTINUE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220727 13:48:20.323" level="INFO">Clicking button 'xpath= //*[@id='continue']'.</msg>
+<status status="PASS" starttime="20220727 13:48:20.323" endtime="20220727 13:48:20.479"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:20.323" endtime="20220727 13:48:20.479"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:20.323" endtime="20220727 13:48:20.479"/>
+</kw>
+<kw name="Then I am redirected to Checkout: Overview page" library="Checkout">
+<kw name="Verify Checkout Overview page" library="CheckoutOverviewPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${CHECKOUT_OVERVIEW_PAGE_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:20.479" endtime="20220727 13:48:20.503"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220727 13:48:21.505" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220727 13:48:20.503" endtime="20220727 13:48:21.505"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:20.479" endtime="20220727 13:48:21.505"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:20.479" endtime="20220727 13:48:21.505"/>
+</kw>
+<kw name="Given I am successfully redirected to Checkout: Overview page" library="Checkout">
+<kw name="Verify Checkout Overview page" library="CheckoutOverviewPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${CHECKOUT_OVERVIEW_PAGE_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:21.505" endtime="20220727 13:48:21.523"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220727 13:48:22.534" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220727 13:48:21.531" endtime="20220727 13:48:22.534"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:21.505" endtime="20220727 13:48:22.534"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:21.505" endtime="20220727 13:48:22.534"/>
+</kw>
+<kw name="When I press Finish button" library="Checkout">
+<kw name="Click on Finish Button" library="CheckoutOverviewPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${FINISH_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220727 13:48:22.534" level="INFO">Clicking button 'xpath= //*[@id='finish']'.</msg>
+<status status="PASS" starttime="20220727 13:48:22.534" endtime="20220727 13:48:22.695"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220727 13:48:23.700" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220727 13:48:22.695" endtime="20220727 13:48:23.700"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:22.534" endtime="20220727 13:48:23.700"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:22.534" endtime="20220727 13:48:23.700"/>
+</kw>
+<kw name="Then I am redirected to Checkout: Complete page" library="Checkout">
+<kw name="Verify Checkout Success page" library="CheckoutSuccessPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${CHECKOUT_SUCCESS_PAGE_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:23.700" endtime="20220727 13:48:23.732"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220727 13:48:24.743" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220727 13:48:23.732" endtime="20220727 13:48:24.743"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:23.700" endtime="20220727 13:48:24.743"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:23.700" endtime="20220727 13:48:24.743"/>
+</kw>
+<kw name="Given I am successfully redirected to Checkout: Complete page" library="Checkout">
+<kw name="Verify Checkout Success page" library="CheckoutSuccessPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${CHECKOUT_SUCCESS_PAGE_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:24.807" endtime="20220727 13:48:24.863"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220727 13:48:25.872" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220727 13:48:24.863" endtime="20220727 13:48:25.872"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:24.799" endtime="20220727 13:48:25.872"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:24.799" endtime="20220727 13:48:25.872"/>
+</kw>
+<kw name="When I press Back Home button" library="Checkout">
+<kw name="Click Back Home Button" library="CheckoutSuccessPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BACK_HOME_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220727 13:48:25.888" level="INFO">Clicking button 'xpath = //*[@id='back-to-products']'.</msg>
+<status status="PASS" starttime="20220727 13:48:25.888" endtime="20220727 13:48:26.237"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220727 13:48:27.245" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220727 13:48:26.237" endtime="20220727 13:48:27.245"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:25.888" endtime="20220727 13:48:27.245"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:25.880" endtime="20220727 13:48:27.245"/>
+</kw>
+<kw name="Then I am redirected to the first page" library="Checkout">
+<kw name="Verify Inventory Page" library="InventoryPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PAGE_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220727 13:48:27.245" endtime="20220727 13:48:27.265"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:27.245" endtime="20220727 13:48:27.265"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:27.245" endtime="20220727 13:48:27.265"/>
+</kw>
+<kw name="End Web Test" library="CommonWeb" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220727 13:48:27.265" endtime="20220727 13:48:37.991"/>
+</kw>
+<status status="PASS" starttime="20220727 13:48:27.265" endtime="20220727 13:48:37.993"/>
+</kw>
+<tag>Checkout</tag>
+<status status="PASS" starttime="20220727 13:47:58.030" endtime="20220727 13:48:37.993"/>
+</test>
+<doc>This is test SauceDemo full checkout for product</doc>
+<status status="PASS" starttime="20220727 13:47:46.876" endtime="20220727 13:48:37.993"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Checkout</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Checkout">Checkout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
