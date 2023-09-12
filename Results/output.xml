@@ -1,387 +1,272 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.7 on win32)" generated="20220727 13:47:46.855" rpa="false" schemaversion="3">
-<suite id="s1" name="Checkout" source="C:\development\robot-scripts\saucedemo_script\tests\Checkout.robot">
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230912 11:56:51.327" rpa="false" schemaversion="4">
+<suite id="s1" name="Checkout" source="C:\Users\User\Desktop\OneDRIVE\My Own Programming Work\Saucelabs_robotframework\tests\Checkout.robot">
 <test id="s1-t1" name="Successfully completing checkout for product" line="18">
 <kw name="Begin Web Test" library="CommonWeb" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>data:,</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220727 13:47:58.032" level="INFO">Opening browser 'chrome' to base url 'data:,'.</msg>
-<status status="PASS" starttime="20220727 13:47:58.032" endtime="20220727 13:48:07.689"/>
+<msg timestamp="20230912 11:56:52.097" level="INFO">Opening browser 'chrome' to base url 'data:,'.</msg>
+<msg timestamp="20230912 11:56:53.841" level="WARN">The chromedriver version (115.0.5790.170) detected in PATH at C:\Users\User\AppData\Local\Programs\Python\Python311\Scripts\chromedriver.exe might not be compatible with the detected chrome version (116.0.5845.180); currently, chromedriver 116.0.5845.96 is recommended for chrome 116.*, so it is advised to delete the driver in PATH and retry</msg>
+<status status="PASS" starttime="20230912 11:56:52.096" endtime="20230912 11:56:58.496"/>
 </kw>
-<status status="PASS" starttime="20220727 13:47:58.032" endtime="20220727 13:48:07.697"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230912 11:56:58.497" endtime="20230912 11:56:58.804"/>
+</kw>
+<status status="PASS" starttime="20230912 11:56:52.095" endtime="20230912 11:56:58.804"/>
 </kw>
 <kw name="Given I have to navigate to SauceDemo web site" library="Checkout">
 <kw name="Navigate To" library="LoginPage">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${SAUCEDEMO_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220727 13:48:07.723" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
-<status status="PASS" starttime="20220727 13:48:07.723" endtime="20220727 13:48:09.795"/>
+<msg timestamp="20230912 11:56:58.810" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20230912 11:56:58.809" endtime="20230912 11:57:01.112"/>
 </kw>
-<status status="PASS" starttime="20220727 13:48:07.721" endtime="20220727 13:48:09.795"/>
+<status status="PASS" starttime="20230912 11:56:58.808" endtime="20230912 11:57:01.112"/>
 </kw>
-<status status="PASS" starttime="20220727 13:48:07.721" endtime="20220727 13:48:09.795"/>
+<status status="PASS" starttime="20230912 11:56:58.807" endtime="20230912 11:57:01.112"/>
 </kw>
 <kw name="When I login with the valid username and password" library="Checkout">
 <kw name="Enter Username" library="LoginPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230912 11:57:06.133" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230912 11:57:01.131" endtime="20230912 11:57:06.133"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${LOGINPAGE_USERNAME_FIELD}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:09.803" endtime="20220727 13:48:09.891"/>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20230912 11:57:11.347" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230912 11:57:11.348" level="FAIL">Text 'xpath= //*[@id='user-name']' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20230912 11:57:06.133" endtime="20230912 11:57:11.355"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${LOGINPAGE_USERNAME_FIELD}</arg>
 <arg>${USERNAME}[0]</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220727 13:48:09.891" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
-<status status="PASS" starttime="20220727 13:48:09.891" endtime="20220727 13:48:10.413"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.356" endtime="20230912 11:57:11.356"/>
 </kw>
-<status status="PASS" starttime="20220727 13:48:09.803" endtime="20220727 13:48:10.413"/>
+<status status="FAIL" starttime="20230912 11:57:01.130" endtime="20230912 11:57:11.356"/>
 </kw>
 <kw name="Enter Password" library="LoginPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${LOGINPAGE_PASSWORD_FIELD}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:10.413" endtime="20220727 13:48:10.448"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${LOGINPAGE_PASSWORD_FIELD}</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220727 13:48:10.448" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
-<status status="PASS" starttime="20220727 13:48:10.448" endtime="20220727 13:48:10.855"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:10.413" endtime="20220727 13:48:10.855"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.357" endtime="20230912 11:57:11.357"/>
 </kw>
 <kw name="Click Login Button" library="LoginPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${LOGIN_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220727 13:48:10.855" level="INFO">Clicking button 'id=login-button'.</msg>
-<status status="PASS" starttime="20220727 13:48:10.855" endtime="20220727 13:48:12.032"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.357" endtime="20230912 11:57:11.358"/>
 </kw>
-<status status="PASS" starttime="20220727 13:48:10.855" endtime="20220727 13:48:12.032"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:09.795" endtime="20220727 13:48:12.032"/>
+<status status="FAIL" starttime="20230912 11:57:01.129" endtime="20230912 11:57:11.358"/>
 </kw>
 <kw name="Then I am successfully logged in SauceDemo" library="Checkout">
-<kw name="Verify Inventory Page" library="InventoryPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${PAGE_TITLE}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:12.064" endtime="20220727 13:48:12.648"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:12.064" endtime="20220727 13:48:12.648"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:12.064" endtime="20220727 13:48:12.648"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.359" endtime="20230912 11:57:11.359"/>
 </kw>
 <kw name="Given I am logged in SauceDemo" library="Checkout">
-<kw name="Verify Inventory Page" library="InventoryPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${PAGE_TITLE}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:12.795" endtime="20220727 13:48:12.851"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:12.795" endtime="20220727 13:48:12.851"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:12.795" endtime="20220727 13:48:12.851"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.360" endtime="20230912 11:57:11.360"/>
 </kw>
 <kw name="When I add to cart one Sauce Labs Bike Light pressing Add to Cart button" library="Checkout">
-<kw name="Add item to cart" library="InventoryPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${ADD_BUTTON_SL_BIKE_LIGHT}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220727 13:48:12.859" level="INFO">Clicking button 'xpath= //button[@id='add-to-cart-sauce-labs-bike-light']'.</msg>
-<status status="PASS" starttime="20220727 13:48:12.859" endtime="20220727 13:48:13.078"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:12.859" endtime="20220727 13:48:13.078"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:12.851" endtime="20220727 13:48:13.078"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.362" endtime="20230912 11:57:11.362"/>
 </kw>
 <kw name="Then I go to check the Cart page" library="Checkout">
-<kw name="Click on Cart Icon" library="InventoryPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${CART_ICON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220727 13:48:13.118" level="INFO">Clicking element 'xpath=//*[@id='shopping_cart_container']/a'.</msg>
-<status status="PASS" starttime="20220727 13:48:13.110" endtime="20220727 13:48:13.318"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:13.110" endtime="20220727 13:48:13.318"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:13.110" endtime="20220727 13:48:13.318"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.363" endtime="20230912 11:57:11.363"/>
 </kw>
 <kw name="Given I am successfully redirected to Cart page" library="Checkout">
-<kw name="Verify Cart Page" library="CartPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${CART_PAGE_TITLE}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:13.341" endtime="20220727 13:48:13.404"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:48:14.410" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220727 13:48:13.404" endtime="20220727 13:48:14.410"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:13.341" endtime="20220727 13:48:14.410"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:13.341" endtime="20220727 13:48:14.410"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.363" endtime="20230912 11:57:11.363"/>
 </kw>
 <kw name="And I check if one Sauce Labs Bike Light is added in the shopping cart" library="Checkout">
-<kw name="Verify Item In Cart" library="CartPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${ITEM_TITLE_IN_CART}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:14.418" endtime="20220727 13:48:14.455"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:48:15.482" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220727 13:48:14.455" endtime="20220727 13:48:15.482"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:14.410" endtime="20220727 13:48:15.482"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:14.410" endtime="20220727 13:48:15.482"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.364" endtime="20230912 11:57:11.364"/>
 </kw>
 <kw name="When I press Checkout button" library="Checkout">
-<kw name="Click Checkout Button" library="CartPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${CHECKOUT_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220727 13:48:15.498" level="INFO">Clicking button 'xpath= //*[@id='checkout']'.</msg>
-<status status="PASS" starttime="20220727 13:48:15.498" endtime="20220727 13:48:15.995"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:48:17.023" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220727 13:48:16.003" endtime="20220727 13:48:17.023"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:15.498" endtime="20220727 13:48:17.023"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:15.498" endtime="20220727 13:48:17.023"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.365" endtime="20230912 11:57:11.365"/>
 </kw>
 <kw name="Then I am redirected to Checkout page" library="Checkout">
-<kw name="Verify Checkout Page" library="CheckoutPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${CHECKOUT_PAGE_TITLE}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:17.159" endtime="20220727 13:48:17.215"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:48:18.235" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220727 13:48:17.223" endtime="20220727 13:48:18.235"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:17.151" endtime="20220727 13:48:18.235"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:17.127" endtime="20220727 13:48:18.235"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.366" endtime="20230912 11:57:11.366"/>
 </kw>
 <kw name="Given I am successfully redirected to Checkout page" library="Checkout">
-<kw name="Verify Checkout Page" library="CheckoutPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${CHECKOUT_PAGE_TITLE}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:18.243" endtime="20220727 13:48:18.291"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:48:19.338" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220727 13:48:18.299" endtime="20220727 13:48:19.338"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:18.235" endtime="20220727 13:48:19.338"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:18.235" endtime="20220727 13:48:19.338"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.367" endtime="20230912 11:57:11.367"/>
 </kw>
 <kw name="When I populate all field with the required information" library="Checkout">
-<kw name="Populate First Name" library="CheckoutPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${FIRST_NAME_FIELD}</arg>
-<arg>${FIRST_NAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220727 13:48:19.394" level="INFO">Typing text 'Pete' into text field 'xpath= //*[@id='first-name']'.</msg>
-<status status="PASS" starttime="20220727 13:48:19.394" endtime="20220727 13:48:19.690"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:19.394" endtime="20220727 13:48:19.698"/>
-</kw>
-<kw name="Populate Last Name" library="CheckoutPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${LAST_NAME_FIELD}</arg>
-<arg>${LAST_NAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220727 13:48:19.698" level="INFO">Typing text 'Pen' into text field 'xpath= //*[@id='last-name']'.</msg>
-<status status="PASS" starttime="20220727 13:48:19.698" endtime="20220727 13:48:19.954"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:19.698" endtime="20220727 13:48:19.954"/>
-</kw>
-<kw name="Populate Zip/Postal code" library="CheckoutPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ZIP_POSTAL_CODE_FIELD}</arg>
-<arg>${ZIP_POSTAL_CODE}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220727 13:48:19.954" level="INFO">Typing text 'LV-1026' into text field 'xpath= //*[@id='postal-code']'.</msg>
-<status status="PASS" starttime="20220727 13:48:19.954" endtime="20220727 13:48:20.323"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:19.954" endtime="20220727 13:48:20.323"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:19.386" endtime="20220727 13:48:20.323"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.367" endtime="20230912 11:57:11.367"/>
 </kw>
 <kw name="And Press Continue button" library="Checkout">
-<kw name="Click on Continue Button" library="CheckoutPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${CONTINUE_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220727 13:48:20.323" level="INFO">Clicking button 'xpath= //*[@id='continue']'.</msg>
-<status status="PASS" starttime="20220727 13:48:20.323" endtime="20220727 13:48:20.479"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:20.323" endtime="20220727 13:48:20.479"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:20.323" endtime="20220727 13:48:20.479"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.369" endtime="20230912 11:57:11.369"/>
 </kw>
 <kw name="Then I am redirected to Checkout: Overview page" library="Checkout">
-<kw name="Verify Checkout Overview page" library="CheckoutOverviewPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${CHECKOUT_OVERVIEW_PAGE_TITLE}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:20.479" endtime="20220727 13:48:20.503"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:48:21.505" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220727 13:48:20.503" endtime="20220727 13:48:21.505"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:20.479" endtime="20220727 13:48:21.505"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:20.479" endtime="20220727 13:48:21.505"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.370" endtime="20230912 11:57:11.370"/>
 </kw>
 <kw name="Given I am successfully redirected to Checkout: Overview page" library="Checkout">
-<kw name="Verify Checkout Overview page" library="CheckoutOverviewPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${CHECKOUT_OVERVIEW_PAGE_TITLE}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:21.505" endtime="20220727 13:48:21.523"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:48:22.534" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220727 13:48:21.531" endtime="20220727 13:48:22.534"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:21.505" endtime="20220727 13:48:22.534"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:21.505" endtime="20220727 13:48:22.534"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.371" endtime="20230912 11:57:11.372"/>
 </kw>
 <kw name="When I press Finish button" library="Checkout">
-<kw name="Click on Finish Button" library="CheckoutOverviewPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${FINISH_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220727 13:48:22.534" level="INFO">Clicking button 'xpath= //*[@id='finish']'.</msg>
-<status status="PASS" starttime="20220727 13:48:22.534" endtime="20220727 13:48:22.695"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:48:23.700" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220727 13:48:22.695" endtime="20220727 13:48:23.700"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:22.534" endtime="20220727 13:48:23.700"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:22.534" endtime="20220727 13:48:23.700"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.373" endtime="20230912 11:57:11.373"/>
 </kw>
 <kw name="Then I am redirected to Checkout: Complete page" library="Checkout">
-<kw name="Verify Checkout Success page" library="CheckoutSuccessPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${CHECKOUT_SUCCESS_PAGE_TITLE}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:23.700" endtime="20220727 13:48:23.732"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:48:24.743" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220727 13:48:23.732" endtime="20220727 13:48:24.743"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:23.700" endtime="20220727 13:48:24.743"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:23.700" endtime="20220727 13:48:24.743"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.374" endtime="20230912 11:57:11.374"/>
 </kw>
 <kw name="Given I am successfully redirected to Checkout: Complete page" library="Checkout">
-<kw name="Verify Checkout Success page" library="CheckoutSuccessPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${CHECKOUT_SUCCESS_PAGE_TITLE}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:24.807" endtime="20220727 13:48:24.863"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:48:25.872" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220727 13:48:24.863" endtime="20220727 13:48:25.872"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:24.799" endtime="20220727 13:48:25.872"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:24.799" endtime="20220727 13:48:25.872"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.375" endtime="20230912 11:57:11.375"/>
 </kw>
 <kw name="When I press Back Home button" library="Checkout">
-<kw name="Click Back Home Button" library="CheckoutSuccessPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${BACK_HOME_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220727 13:48:25.888" level="INFO">Clicking button 'xpath = //*[@id='back-to-products']'.</msg>
-<status status="PASS" starttime="20220727 13:48:25.888" endtime="20220727 13:48:26.237"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:48:27.245" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220727 13:48:26.237" endtime="20220727 13:48:27.245"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:25.888" endtime="20220727 13:48:27.245"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:25.880" endtime="20220727 13:48:27.245"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.376" endtime="20230912 11:57:11.376"/>
 </kw>
 <kw name="Then I am redirected to the first page" library="Checkout">
-<kw name="Verify Inventory Page" library="InventoryPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${PAGE_TITLE}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220727 13:48:27.245" endtime="20220727 13:48:27.265"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:27.245" endtime="20220727 13:48:27.265"/>
-</kw>
-<status status="PASS" starttime="20220727 13:48:27.245" endtime="20220727 13:48:27.265"/>
+<status status="NOT RUN" starttime="20230912 11:57:11.377" endtime="20230912 11:57:11.377"/>
 </kw>
 <kw name="End Web Test" library="CommonWeb" type="TEARDOWN">
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20220727 13:48:27.265" endtime="20220727 13:48:37.991"/>
+<status status="PASS" starttime="20230912 11:57:11.378" endtime="20230912 11:57:18.334"/>
 </kw>
-<status status="PASS" starttime="20220727 13:48:27.265" endtime="20220727 13:48:37.993"/>
+<status status="PASS" starttime="20230912 11:57:11.377" endtime="20230912 11:57:18.334"/>
 </kw>
 <tag>Checkout</tag>
-<status status="PASS" starttime="20220727 13:47:58.030" endtime="20220727 13:48:37.993"/>
+<status status="FAIL" starttime="20230912 11:56:52.093" endtime="20230912 11:57:18.335">Text 'xpath= //*[@id='user-name']' did not appear in 5 seconds.</status>
+</test>
+<test id="s1-t2" name="Checking if correct error messages appears in Checkout page" line="46">
+<kw name="Begin Web Test" library="CommonWeb" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>data:,</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230912 11:57:18.340" level="INFO">Opening browser 'chrome' to base url 'data:,'.</msg>
+<msg timestamp="20230912 11:57:19.942" level="WARN">The chromedriver version (115.0.5790.170) detected in PATH at C:\Users\User\AppData\Local\Programs\Python\Python311\Scripts\chromedriver.exe might not be compatible with the detected chrome version (116.0.5845.180); currently, chromedriver 116.0.5845.96 is recommended for chrome 116.*, so it is advised to delete the driver in PATH and retry</msg>
+<status status="PASS" starttime="20230912 11:57:18.339" endtime="20230912 11:57:22.689"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230912 11:57:22.690" endtime="20230912 11:57:22.882"/>
+</kw>
+<status status="PASS" starttime="20230912 11:57:18.338" endtime="20230912 11:57:22.884"/>
+</kw>
+<kw name="Given I have to navigate to SauceDemo web site" library="Checkout">
+<kw name="Navigate To" library="LoginPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${SAUCEDEMO_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230912 11:57:22.907" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20230912 11:57:22.907" endtime="20230912 11:57:24.880"/>
+</kw>
+<status status="PASS" starttime="20230912 11:57:22.906" endtime="20230912 11:57:24.881"/>
+</kw>
+<status status="PASS" starttime="20230912 11:57:22.905" endtime="20230912 11:57:24.881"/>
+</kw>
+<kw name="When I login with the valid username and password" library="Checkout">
+<kw name="Enter Username" library="LoginPage">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230912 11:57:29.896" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230912 11:57:24.895" endtime="20230912 11:57:29.896"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${LOGINPAGE_USERNAME_FIELD}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20230912 11:57:35.468" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230912 11:57:35.468" level="FAIL">Text 'xpath= //*[@id='user-name']' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20230912 11:57:29.900" endtime="20230912 11:57:35.470"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGINPAGE_USERNAME_FIELD}</arg>
+<arg>${USERNAME}[0]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230912 11:57:35.471" endtime="20230912 11:57:35.471"/>
+</kw>
+<status status="FAIL" starttime="20230912 11:57:24.895" endtime="20230912 11:57:35.471"/>
+</kw>
+<kw name="Enter Password" library="LoginPage">
+<status status="NOT RUN" starttime="20230912 11:57:35.472" endtime="20230912 11:57:35.472"/>
+</kw>
+<kw name="Click Login Button" library="LoginPage">
+<status status="NOT RUN" starttime="20230912 11:57:35.472" endtime="20230912 11:57:35.472"/>
+</kw>
+<status status="FAIL" starttime="20230912 11:57:24.894" endtime="20230912 11:57:35.473"/>
+</kw>
+<kw name="Then I am successfully logged in SauceDemo" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.474" endtime="20230912 11:57:35.474"/>
+</kw>
+<kw name="Given I am logged in SauceDemo" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.474" endtime="20230912 11:57:35.474"/>
+</kw>
+<kw name="When I click on Cart icon" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.475" endtime="20230912 11:57:35.475"/>
+</kw>
+<kw name="Then I am redirected to Cart page" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.476" endtime="20230912 11:57:35.476"/>
+</kw>
+<kw name="Given I am successfully redirected to Cart page" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.476" endtime="20230912 11:57:35.476"/>
+</kw>
+<kw name="When I press Checkout button" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.477" endtime="20230912 11:57:35.477"/>
+</kw>
+<kw name="Then I am redirected to Checkout page" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.478" endtime="20230912 11:57:35.478"/>
+</kw>
+<kw name="Given I am successfully redirected to Checkout page" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.479" endtime="20230912 11:57:35.479"/>
+</kw>
+<kw name="When I populate all required fields with missing out name field" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.480" endtime="20230912 11:57:35.480"/>
+</kw>
+<kw name="And Press Continue button" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.480" endtime="20230912 11:57:35.480"/>
+</kw>
+<kw name="Then I receive Error message that I need to populate name field" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.481" endtime="20230912 11:57:35.481"/>
+</kw>
+<kw name="Given I am successfully redirected to Checkout page" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.482" endtime="20230912 11:57:35.482"/>
+</kw>
+<kw name="When I populate all required fields with missing out last name field" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.482" endtime="20230912 11:57:35.482"/>
+</kw>
+<kw name="And Press Continue button" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.483" endtime="20230912 11:57:35.483"/>
+</kw>
+<kw name="Then I receive Error message that I need to populate last name field" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.484" endtime="20230912 11:57:35.484"/>
+</kw>
+<kw name="Given I am successfully redirected to Checkout page" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.485" endtime="20230912 11:57:35.485"/>
+</kw>
+<kw name="When I populate all required fields with missing out zip/postal code field" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.485" endtime="20230912 11:57:35.485"/>
+</kw>
+<kw name="And Press Continue button" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.486" endtime="20230912 11:57:35.486"/>
+</kw>
+<kw name="Then I receive Error message that I need to populate zip/postal code name field" library="Checkout">
+<status status="NOT RUN" starttime="20230912 11:57:35.487" endtime="20230912 11:57:35.487"/>
+</kw>
+<kw name="End Web Test" library="CommonWeb" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230912 11:57:35.488" endtime="20230912 11:57:42.989"/>
+</kw>
+<status status="PASS" starttime="20230912 11:57:35.487" endtime="20230912 11:57:42.989"/>
+</kw>
+<tag>CheckoutErrorMessage</tag>
+<status status="FAIL" starttime="20230912 11:57:18.337" endtime="20230912 11:57:42.990">Text 'xpath= //*[@id='user-name']' did not appear in 5 seconds.</status>
 </test>
 <doc>This is test SauceDemo full checkout for product</doc>
-<status status="PASS" starttime="20220727 13:47:46.876" endtime="20220727 13:48:37.993"/>
+<status status="FAIL" starttime="20230912 11:56:51.333" endtime="20230912 11:57:42.995"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Checkout</stat>
+<stat pass="0" fail="1" skip="0">Checkout</stat>
+<stat pass="0" fail="1" skip="0">CheckoutErrorMessage</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Checkout">Checkout</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="Checkout">Checkout</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230912 11:56:53.841" level="WARN">The chromedriver version (115.0.5790.170) detected in PATH at C:\Users\User\AppData\Local\Programs\Python\Python311\Scripts\chromedriver.exe might not be compatible with the detected chrome version (116.0.5845.180); currently, chromedriver 116.0.5845.96 is recommended for chrome 116.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20230912 11:57:19.942" level="WARN">The chromedriver version (115.0.5790.170) detected in PATH at C:\Users\User\AppData\Local\Programs\Python\Python311\Scripts\chromedriver.exe might not be compatible with the detected chrome version (116.0.5845.180); currently, chromedriver 116.0.5845.96 is recommended for chrome 116.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>

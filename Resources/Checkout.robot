@@ -63,4 +63,39 @@ I am redirected to the first page
     InventoryPage.Verify Inventory Page
 
 
+I click on Cart icon
+    InventoryPage.Click on Cart Icon
+
+I am redirected to Cart page
+    CartPage.Verify Cart Page
+
+I populate all required fields with missing out name field
+    CheckoutPage.Populate First Name For Error 1
+    CheckoutPage.Populate Last Name For Error 1
+    CheckoutPage.Populate Zip/Postal code For Error 1
+
+I populate all required fields with missing out last name field
+    CheckoutPage.Populate First Name For Error 2
+    CheckoutPage.Populate Last Name For Error 2
+    CheckoutPage.Populate Zip/Postal code For Error 2
+
+I populate all required fields with missing out zip/postal code field
+    CheckoutPage.Populate First Name For Error 3
+    CheckoutPage.Populate Last Name For Error 3
+    CheckoutPage.Populate Zip/Postal code For Error 3
+
+I receive Error message that I need to populate name field
+    CheckoutPage.Error Message For Empty Name Field
+
+I receive Error message that I need to populate last name field
+    CheckoutPage.Error Message For Empty Last Name Field
+
+I receive Error message that I need to populate zip/postal code name field
+    CheckoutPage.Error Message For Zip/Postal Code Field
+
+
+
+
+
+
 
