@@ -42,3 +42,32 @@ Successfully completing checkout for product
     Given I am successfully redirected to Checkout: Complete page
     When I press Back Home button
     Then I am redirected to the first page
+
+Checking if correct error messages appears in Checkout page
+    [Tags]   CheckoutErrorMessage
+    Given I have to navigate to SauceDemo web site
+    When I login with the valid username and password
+    Then I am successfully logged in SauceDemo
+
+    Given I am logged in SauceDemo
+    When I click on Cart icon
+    Then I am redirected to Cart page
+
+    Given I am successfully redirected to Cart page
+    When I press Checkout button
+    Then I am redirected to Checkout page
+
+    Given I am successfully redirected to Checkout page
+    When I populate all required fields with missing out name field
+    And Press Continue button
+    Then I receive Error message that I need to populate name field
+
+    Given I am successfully redirected to Checkout page
+    When I populate all required fields with missing out last name field
+    And Press Continue button
+    Then I receive Error message that I need to populate last name field
+
+    Given I am successfully redirected to Checkout page
+    When I populate all required fields with missing out zip/postal code field
+    And Press Continue button
+    Then I receive Error message that I need to populate zip/postal code name field
