@@ -91,7 +91,14 @@ I receive Error message that I need to populate last name field
     CheckoutPage.Error Message For Empty Last Name Field
 
 I receive Error message that I need to populate zip/postal code name field
-    CheckoutPage.Error Message For Zip/Postal Code Field
+    CheckoutPage.Error Message For Empty Zip/Postal Code Field
+
+I am still on the Checkout page
+    CheckoutPage.Verify Checkout Page
+
+I clear all fields
+    CheckoutPage.Clearing all fields
+    Sleep    2s
 
 
 
