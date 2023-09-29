@@ -1,11 +1,11 @@
 *** Settings ***
-Documentation    This is test SauceDemo login
+
+Documentation    This is to test SauceDemo Login page
 Resource   ../../Resources/LoginPage.robot
 Resource   ../../Resources/CommonWeb.robot
 
 Test Setup  Begin Web Test
 Test Teardown   End Web Test
-
 
 *** Variables ***
 

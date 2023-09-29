@@ -1,4 +1,5 @@
 *** Settings ***
+
 Library    SeleniumLibrary
 
 Resource    ../../Data/WebPagesData/CheckoutSuccessPageData.robot

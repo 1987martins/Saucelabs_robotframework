@@ -1,11 +1,11 @@
 *** Settings ***
-Documentation    This is test SauceDemo checkout flow
+
+Documentation    This is to test SauceDemo checkout flow
 Resource    ../Resources/Checkout.robot
 Resource    ../Resources/CommonWeb.robot
 
 Test Setup    Begin Web Test
 Test Teardown   End Web Test
-
 
 *** Variables ***
 
@@ -59,7 +59,6 @@ Checking if correct error messages appears in Checkout page if Name field is lef
     When I populate all required fields with missing out name field
     And Press Continue button
     Then I receive Error message that I need to populate name field
-
 
 Checking if correct error messages appears in Checkout page if Last name field is left emtpy
     [Tags]   CheckoutErrorMessage

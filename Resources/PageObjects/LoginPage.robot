@@ -1,13 +1,14 @@
 *** Settings ***
 
+Library    SeleniumLibrary
+
 Resource    ../../Data/GeneralInputData.robot
 Resource    ../../Data/WebPagesData/LoginPageData.robot
-
-Library    SeleniumLibrary
 
 *** Variables ***
 
 *** Keywords ***
+
 Navigate To
      Go To    ${SAUCEDEMO_URL}
 

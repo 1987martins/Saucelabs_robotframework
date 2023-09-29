@@ -1,4 +1,5 @@
 *** Settings ***
+
 Library    SeleniumLibrary
 
 Resource    ../../Data/WebPagesData/CheckoutPageData.robot
@@ -65,9 +66,3 @@ Error Message For Empty Zip/Postal Code Field
     ${ACTUAL_ERROR_MESSAGE}    Get Text    ${CHECKOUT_PAGE_ERROR_MESSAGE_LOCATOR}
     Should Contain    ${ACTUAL_ERROR_MESSAGE}    ${EXPECTED_ERROR_MESSAGE}
     Sleep  2s
-
-
-
-
-
-

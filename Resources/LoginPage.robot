@@ -1,4 +1,5 @@
 *** Settings ***
+
 Resource     ../Resources/PageObjects/LoginPage.robot
 Resource    ../Resources/PageObjects/InventoryPage.robot
 
@@ -47,8 +48,3 @@ I login with username for locked out user and valid password field empty
     LoginPage.Click Login Button
 I see login error message 'Epic sadface: Sorry, this user has been locked out.'
     LoginPage.Error Message For Locked Out User
-
-
-
-
-
