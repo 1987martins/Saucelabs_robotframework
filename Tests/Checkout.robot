@@ -15,7 +15,7 @@ Test Teardown   End Web Test
 
 Successfully completing checkout for product
     [Tags]    Checkout
-    Given I have to navigate to SauceDemo web site
+    Given I have to navigate to SauceDemo website
     When I login with the valid username and password
     Then I am successfully logged in SauceDemo
 

@@ -8,7 +8,7 @@ Resource    ../Resources/PageObjects/CheckoutSuccessPage.robot
 
 *** Keywords ***
 
-I have to navigate to SauceDemo web site
+I have to navigate to SauceDemo website
     LoginPage.Navigate To
 I login with the valid username and password
     LoginPage.Enter Username
@@ -95,14 +95,3 @@ I receive Error message that I need to populate zip/postal code name field
 
 I am still on the Checkout page
     CheckoutPage.Verify Checkout Page
-
-I clear all fields
-    CheckoutPage.Clearing all fields
-    Sleep    2s
-
-
-
-
-
-
-
