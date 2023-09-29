@@ -1,11 +1,11 @@
 *** Settings ***
-Documentation    This is test to check error messages for Login page
+
+Documentation    These are tests to check error messages for Login page
 Resource    ../../Resources/LoginPage.robot
 Resource    ../../Resources/CommonWeb.robot
 
 Test Setup    Begin Web Test
 Test Teardown   End Web Test
-
 
 *** Variables ***
 

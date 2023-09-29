@@ -1,4 +1,5 @@
 *** Settings ***
+
 Resource     ../Resources/PageObjects/LoginPage.robot
 Resource    ../Resources/PageObjects/InventoryPage.robot
 Resource    ../Resources/PageObjects/CartPage.robot
@@ -24,7 +25,6 @@ I add to cart one Sauce Labs Bike Light pressing Add to Cart button
 I go to check the Cart page
     InventoryPage.Click on Cart Icon
 
-
 I am successfully redirected to Cart page
     CartPage.Verify Cart Page
 I check if one Sauce Labs Bike Light is added in the shopping cart
@@ -33,7 +33,6 @@ I press Checkout button
     CartPage.Click Checkout Button
 I am redirected to Checkout page
     CheckoutPage.Verify Checkout Page
-
 
 I am successfully redirected to Checkout page
     CheckoutPage.Verify Checkout Page
@@ -46,7 +45,6 @@ Press Continue button
     CheckoutPage.Click on Continue Button
 I am redirected to Checkout: Overview page
     CheckoutOverviewPage.Verify Checkout Overview page
-
 
 I am successfully redirected to Checkout: Overview page
     CheckoutOverviewPage.Verify Checkout Overview page
@@ -61,7 +59,6 @@ I press Back Home button
     CheckoutSuccessPage.Click Back Home Button
 I am redirected to the first page
     InventoryPage.Verify Inventory Page
-
 
 I click on Cart icon
     InventoryPage.Click on Cart Icon

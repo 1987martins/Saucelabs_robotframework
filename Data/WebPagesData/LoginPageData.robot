@@ -3,6 +3,7 @@
 
 
 *** Variables ***
+
 #PAGE ELEMENTS
 ${LOGINPAGE_USERNAME_FIELD} =  xpath= //*[@id='user-name']
 ${LOGINPAGE_PASSWORD_FIELD} =  xpath= //*[@id='password']

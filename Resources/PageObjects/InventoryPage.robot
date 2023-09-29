@@ -1,7 +1,9 @@
 *** Settings ***
 
 Library    SeleniumLibrary
+
 Resource    ../../Data/WebPagesData/InventoryPage.robot
+
 *** Keywords ***
 
 Verify Inventory Page
