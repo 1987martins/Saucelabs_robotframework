@@ -41,6 +41,21 @@ Successfully completing checkout for product
     When I press Back Home button
     Then I am redirected to the first page
 
+Checking if user can remove item from the cart
+       [Tags]    Remove item from the cart
+    Given I have to navigate to SauceDemo website
+    When I login with the valid username and password
+    Then I am successfully logged in SauceDemo
+
+    Given I am logged in SauceDemo
+    When I add to cart one Sauce Labs Backpack pressing Add to Cart button
+    Then I go to check the Cart page
+
+    Given I am successfully redirected to Cart page
+    And I check if Sauce Labs Backpack is added in the shopping cart
+    When I click on Remove button
+    Then Item has been removed from the cart and the cart is empty
+
 Checking if correct error messages appears in Checkout page if Name field is left emtpy
     [Tags]   CheckoutErrorMessage
     Given I have to navigate to SauceDemo web site

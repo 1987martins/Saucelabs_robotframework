@@ -21,14 +21,14 @@ I am successfully logged in SauceDemo
 I am logged in SauceDemo
     InventoryPage.Verify Inventory Page
 I add to cart one Sauce Labs Bike Light pressing Add to Cart button
-    InventoryPage.Add item to cart
+    InventoryPage.Add Sauce Labs Bike Light
 I go to check the Cart page
     InventoryPage.Click on Cart Icon
 
 I am successfully redirected to Cart page
     CartPage.Verify Cart Page
 I check if one Sauce Labs Bike Light is added in the shopping cart
-    CartPage.Verify Item In Cart
+    CartPage.Verify Bike Light Item In Cart
 I press Checkout button
     CartPage.Click Checkout Button
 I am redirected to Checkout page
@@ -92,3 +92,12 @@ I receive Error message that I need to populate zip/postal code name field
 
 I am still on the Checkout page
     CheckoutPage.Verify Checkout Page
+
+I add to cart one Sauce Labs Backpack pressing Add to Cart button
+    InventoryPage.Add Sauce Labs Backpack
+I check if Sauce Labs Backpack is added in the shopping cart
+    CartPage.Verify Backpack Item In The Cart
+I click on Remove button
+    CartPage.Click Remove Button
+Item has been removed from the cart and the cart is empty
+    CartPage.Verify That Backpack Item Has Been Removed From The Cart

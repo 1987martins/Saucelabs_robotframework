@@ -32,9 +32,9 @@ Populate Zip/Postal code For Error 1
     Input Text     ${ZIP_POSTAL_CODE_FIELD}    ${ZIP_POSTAL_CODE}[0]
 
 Error Message For Empty Name Field
-    ${expected_substring}    Set Variable    ${CHECKOUT_PAGE_ERROR_MESSAGE}[0]
-    ${actual_error_message}    Get Text    ${CHECKOUT_PAGE_ERROR_MESSAGE_LOCATOR}
-    Should Contain    ${actual_error_message}    ${expected_substring}
+    ${EXPECTED_MESSAGE}    Set Variable    ${CHECKOUT_PAGE_ERROR_MESSAGE}[0]
+    ${ACTUAL_ERROR_MESSAGE}    Get Text    ${CHECKOUT_PAGE_ERROR_MESSAGE_LOCATOR}
+    Should Contain    ${ACTUAL_ERROR_MESSAGE}    ${EXPECTED_MESSAGE}
     Sleep  2s
 
 Populate First Name For Error 2
@@ -47,9 +47,9 @@ Populate Zip/Postal code For Error 2
     Input Text     ${ZIP_POSTAL_CODE_FIELD}    ${ZIP_POSTAL_CODE}[0]
 
 Error Message For Empty Last Name Field
-    ${expected_substring}    Set Variable    ${CHECKOUT_PAGE_ERROR_MESSAGE}[1]
-    ${actual_error_message}    Get Text    ${CHECKOUT_PAGE_ERROR_MESSAGE_LOCATOR}
-    Should Contain    ${actual_error_message}    ${expected_substring}
+    ${EXPECTED_MESSAGE}     Set Variable    ${CHECKOUT_PAGE_ERROR_MESSAGE}[1]
+    ${ACTUAL_ERROR_MESSAGE}    Get Text    ${CHECKOUT_PAGE_ERROR_MESSAGE_LOCATOR}
+    Should Contain    ${ACTUAL_ERROR_MESSAGE}    ${EXPECTED_MESSAGE}
     Sleep  2s
 
 Populate First Name For Error 3
